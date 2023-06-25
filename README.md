@@ -135,6 +135,19 @@ public class testMatrizIrregular {
 
 }
 
+	public static void main(String[] args) {
+		int[] vDatos;
+		int[][] mDatos = new int[valor.values().length][5];
+		vDatos = dameDatos();
+		mDatos[vDatos[0] - 1][vDatos[1] - 1] = vDatos[2];
+
+		for (int i = 0; i < mDatos.length; i++) {
+			System.out.printf("Fila N° %d %n", i);
+			for (int y = 0; y < mDatos[i].length; y++) {
+				System.out.printf("Columna N° %d = Valor %d %n", y, mDatos[i][y]);
+			}
+		}
+
 ```
 ## ENUM ARRAY 
 ``` java
@@ -153,7 +166,7 @@ mes.Enero.toString()
 		System.out.println(valor.VALOR100.ordinal());
 ```
 
-### INCIALIZAR TDAS 
+## INCIALIZAR TDAS 
 ```JAVA
 private ListaOrdenada<Key, Objeto> nombreDeLista = new ListaOrdenadasDeJuegosPorPrecio();
 private Cola<String> nombreDeCola= new ColaNodos<>();
