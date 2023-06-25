@@ -278,7 +278,32 @@ public class OrdenadaPorString extends ListaOrdenada<String, Elemento> {
 // el search recibe como parametro la key y te retorna el elemento si lo encuentra, sino null.
 lista.search(Key);
 
-// buscar con un while
+// buscar en la lista ordenada por un atributo que no es la key
+public Empleado buscarEmpleadoQueEmpieceCon(String comienzoNombre) {
+	int pos = 0;
+	Empleado encontrado = null;
+	while (pos < lista.size() && !lista.get(pos).nombreEmpiezaCon(comienzoNombre)) {
+			 pos++; 
+      }
+		 if (pos < lista.size()) {
+			 encontrado = lista.get(pos);
+		 }
+		 return encontrado;
+	}
+```
+
+## RECORRER EN LISTA ORDENADA 
+```java 
+// recorrido completo sin modificar nada
+	private void listarJuegosPorPrecio() {
+		System.out.println("--------------------------------------");
+
+		for (Juego juego : listaDeJuegosPorPrecio) {
+			juego.mostrar();
+		}
+	}
+
+// recorrer en lista ordenada con condicion
 		while (idx < listaDeJuegosPorPrecio.size()
 				&& listaDeJuegosPorPrecio.get(idx).getPrecioDeVenta() <= precioMaximo) {
 			juego = listaDeJuegosPorPrecio.get(idx);
@@ -292,7 +317,6 @@ lista.search(Key);
 
 ## EXCEPCIONES CON MENSAJES
 ```java
-
 	private static final String MSG_JUEGO_NULO = "No se pudo fabricar Juego o Cupon nulo.";
 	private static final String MSG_TIPO_DE_JUEGO = "Error de parametros incorporando tipos de juegos";
 	private static final String MSG_TOTALES = "La venta total fue: $%8.2f\n";
