@@ -204,6 +204,52 @@ private void recorrerCola() {
 			aux = this.pedidosConError.remove();
 		}
   }
+
+
+// Recorrer una cola entera
+
+private boolean hayComodin(Cola<Naipe> colanaipes) {
+		boolean hay = false;
+		Naipe aux;
+		Naipe centinela = null;
+		colanaipes.add(centinela);
+		aux = colanaipes.remove();
+		
+		while (aux != centinela){
+			if(aux.getDescripcion().equals("Comodin") ) {
+				hay = true;
+			} 
+			colanaipes.add(aux);
+			aux = colanaipes.remove();
+		}
+		
+		return hay;
+	}
+
+// recorrer una cola con condicion que si se cumple se sale del ciclo (no queda en el mismo orden, igual aca solo retorna un boolean, lo ideal es armar la cola en otro metodo y en este preguntar si hay tal condicion ya que no modifica la cola original)
+
+private boolean hayComodin(Cola<Naipe> colanaipes) {
+		boolean hay = false;
+		Naipe primero;
+		Naipe actual;
+		primero = colanaipes.remove();
+		if(primero.getDescripcion().equals("Comodin")) {
+			hay = true;
+		}
+		colanaipes.add(primero);
+		
+		
+		while (colanaipes.get() != primero && !hay ){
+			actual = colanaipes.remove();
+			
+			if(actual.getDescripcion().equals("Comodin") ) {
+				hay = true;
+			} 
+			colanaipes.add(actual);
+		}
+		
+		return hay;
+	}
 ```
 
 
@@ -221,6 +267,32 @@ public void recorrerPila(){
     		pilaElementos.apilar(pilaAux.desapilar());
     		}
     	}
+
+// recorrer una pila con condicion
+
+
+/*
+A partir de un mazo de cartas ya mezclado, desarrollar el método sacar(N) para
+obtener un montoncito de diez naipes donde queden ordenados tal como fueron extraídos del
+mazo. Indicar si en este montoncito de cartas hay al menos un comodín, sin mezclarlos y
+dejándolos en el mismo orden de extracción.
+*/
+
+public Cola<Naipe> extraer(int cuantos) {
+		Cola<Naipe> colanaipes = new ColaNodos<>();
+		Naipe naipe;
+		int i = 0;
+		
+		while(!this.naipes.isEmpty() && i < cuantos) {
+			naipe = naipes.pop();
+			colanaipes.add(naipe);
+		}
+		if(!colanaipes.isEmpty() && this.hayComodin(colanaipes)) {
+			System.out.println("En este montoncito hay un comodin");
+		};
+		return colanaipes;
+	}
+
 ```
 
 
