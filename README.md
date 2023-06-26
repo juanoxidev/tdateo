@@ -153,7 +153,7 @@ public class testMatrizIrregular {
 ``` java
 // usar el enum para recorrer 
 		int i = 1;
-		for (Mes mes : Mes.values()) {
+		for (Mes mes : Mes.values()) { // mes.values() retorna un array
 			System.out.println(i);
 			i++;
 		}
@@ -206,7 +206,7 @@ private void recorrerCola() {
   }
 
 
-// Recorrer una cola entera
+// Recorrer una cola entera para contar o verificar algo, donde te aclaren que tenes que verificar todos los elementos.
 
 private boolean hayComodin(Cola<Naipe> colanaipes) {
 		boolean hay = false;
@@ -227,7 +227,7 @@ private boolean hayComodin(Cola<Naipe> colanaipes) {
 	}
 
 // recorrer una cola con condicion que si se cumple se sale del ciclo (no queda en el mismo orden, igual aca solo retorna un boolean, lo ideal es armar la cola en otro metodo y en este preguntar si hay tal condicion ya que no modifica la cola original)
-
+/* este caso se usa cuando los datos no son repetidos, en caso de q lo fueran lo mejor es usar una cola auxiliar u otra estructura, por ej podriamos usar una lista ordenada donde preguntamos si ya esta repetido con el lista.exist(key)*/
 private boolean hayComodin(Cola<Naipe> colanaipes) {
 		boolean hay = false;
 		Naipe primero;
