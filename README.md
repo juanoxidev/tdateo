@@ -166,6 +166,17 @@ mes.Enero.toString()
 		System.out.println(valor.VALOR100.ordinal());
 ```
 
+## RECORRER VECTOR NORMAL
+```JAVA
+for(int i = 0; i<evaluaciones.length; i++) {
+            for(int j = 0; j<evaluaciones[i].length; j++) {
+                if(evaluaciones[i][j] != null) {
+                    evaluaciones[i][j].mostrar(); .// (logica)
+                }
+            }
+        }
+```
+
 ## INCIALIZAR TDAS 
 ```JAVA
 private ListaOrdenada<Key, Objeto> nombreDeLista = new ListaOrdenadasDeJuegosPorPrecio();
