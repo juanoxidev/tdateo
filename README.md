@@ -149,6 +149,23 @@ public class testMatrizIrregular {
 		}
 
 ```
+
+## VALIDACIONES EXCEPCIONES 
+``` java
+public void setNombre(String nombre) {
+		if(nombre == null || nombre == " ") {
+			throw new IllegalArgumentException(MSG_NOMBRE_INVALIDO);
+		}
+		this.nombre = nombre;
+	}
+
+public void setMontoBase(float montoBase) {
+		if(montoBase <= 0) {
+			throw new IllegalArgumentException(MSG_COSTO_INVALIDO);
+		}
+		this.montoBase = montoBase;
+	}
+	```
 ## ENUM ARRAY 
 ``` java
 // usar el enum para recorrer 
