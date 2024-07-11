@@ -165,7 +165,9 @@ public void setMontoBase(float montoBase) {
 		}
 		this.montoBase = montoBase;
 	}
-	```
+```     
+
+
 ## ENUM ARRAY 
 ``` java
 // usar el enum para recorrer 
